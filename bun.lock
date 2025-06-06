@@ -2,7 +2,7 @@
   "lockfileVersion": 1,
   "workspaces": {
     "": {
-      "name": "jskanyevmalcomx",
+      "name": "aidebateapp",
       "dependencies": {
         "@neondatabase/serverless": "^1.0.0",
         "@types/express": "^5.0.2",
