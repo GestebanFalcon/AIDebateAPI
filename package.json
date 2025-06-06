@@ -1,0 +1,32 @@
+{
+  "name": "jskanyevmalcomx",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "@types/bun": "latest",
+    "@types/pg": "^8.15.2",
+    "dotenv": "^16.5.0",
+    "dotenv-cli": "^8.0.0",
+    "drizzle-kit": "^0.31.1"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "scripts": {
+    "dev": "dotenv -e .env.local -- bun --watch run src/index.ts",
+    "generate-auth-keys": "bun run generateAuthKeys.ts"
+  },
+  "dependencies": {
+    "@neondatabase/serverless": "^1.0.0",
+    "@types/express": "^5.0.2",
+    "bcrypt": "^6.0.0",
+    "drizzle-orm": "^0.44.0",
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10",
+    "pg": "^8.16.0",
+    "vitest": "^3.2.2",
+    "zod": "^3.25.48"
+  }
+}
