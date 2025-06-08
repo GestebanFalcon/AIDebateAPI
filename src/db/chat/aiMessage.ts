@@ -1,12 +1,12 @@
 import { pgTable, uuid, text, timestamp } from "drizzle-orm/pg-core";
-import { users } from "../auth/user";
+import { aiMembers } from "./aiMember";
 import { conversations } from "./conversation";
 
-export const messages = pgTable("messages", {
+export const aiMessages = pgTable("aiMessages", {
     id: uuid().primaryKey().defaultRandom(),
     content: text().notNull(),
     createdAt: timestamp().notNull().defaultNow(),
     updatedAt: timestamp(),
-    authorId: uuid().references(() => users.id, { onDelete: "set null"}),
-    conversationId: uuid().references(() => conversations.id, { onDelete: "cascade" })
+    authorId: uuid().references(() => aiMembers.id, { onDelete: "set null"}),
+    conversationId: uuid().notNull().references(() => conversations.id, { onDelete: "cascade" })
 });
