@@ -7,7 +7,8 @@ export default defineConfig({
     dialect: "postgresql",
     schema: [
         "./src/db/auth/*",
-        "./src/db/chat/*"
+        "./src/db/chat/*",
+        "./src/db/junctions.ts"
     ],
     out: "./migrations",
     dbCredentials: {
