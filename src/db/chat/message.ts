@@ -10,3 +10,6 @@ export const messages = pgTable("messages", {
     authorId: uuid().references(() => users.id, { onDelete: "set null"}),
     conversationId: uuid().references(() => conversations.id, { onDelete: "cascade" })
 });
+
+export type insertMessage = typeof messages.$inferInsert;
+export type selectMessage = typeof messages.$inferSelect;

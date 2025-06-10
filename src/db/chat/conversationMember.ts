@@ -9,3 +9,6 @@ export const conversationMembers = pgTable("conversationMembers", {
 }, (table) => [
     primaryKey({ columns: [table.userId, table.conversationId] })
 ]);
+
+export type insertConversationMember = typeof conversationMembers.$inferInsert;
+export type selectConversationMember = typeof conversationMembers.$inferSelect;

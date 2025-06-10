@@ -6,3 +6,6 @@ export const conversations = pgTable("conversations", {
    createdAt: timestamp().notNull().defaultNow(),
    updatedAt: timestamp()
 });
+
+export type insertConversation = typeof conversations.$inferInsert;
+export type selectConversation = typeof conversations.$inferSelect;

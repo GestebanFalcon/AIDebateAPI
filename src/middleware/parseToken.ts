@@ -1,6 +1,6 @@
 import { base64UrlToJson, verifyJwt, type JwtPayloadData } from "@/helpers/auth";
 import { jwtPayloadSchema } from "@/schemas/tokens";
-import type ExtendedRequest from "@/ts/extendedRequest";
+import type { ExtendedRequest } from "@/ts/extendedRequest";
 import type { NextFunction, Request, Response } from "express";
 
 export const parseToken = (req: ExtendedRequest, res: Response, next: NextFunction) => {
