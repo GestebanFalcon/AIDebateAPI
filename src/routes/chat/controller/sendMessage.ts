@@ -18,7 +18,7 @@ export const sendMessage = async (req: ExtendedRequest, res: Response) => {
     }
 
     try {
-        const data: insertMessage = {...body};
+        const data: insertMessage = {...body, authorId: token.sub};
         const [ message ] = await db.insert(messages).values(data).returning();
         if (!message) {
             throw new Error();
