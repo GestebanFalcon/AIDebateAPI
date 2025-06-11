@@ -14,3 +14,8 @@ export const sendMessageSchema = z.object({
     content: z.string().min(1)
 });
 export type sendMessageType = z.infer<typeof sendMessageSchema>;
+
+export const getConversationSchema = z.object({
+    conversationId: z.string()
+});
+export type getConversationType = z.infer<typeof getConversationSchema>;
