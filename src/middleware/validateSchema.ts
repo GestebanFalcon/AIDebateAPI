@@ -11,9 +11,9 @@ export default function validateData(schema: z.ZodObject<any, any>) {
         } catch (err) {
             if (err instanceof ZodError) {
                 const errorMessages = err.errors.map(issue => ({
-                    message: `${issue.path.join('.')} is ${issue}`
+                    message: `${issue.path.join('.')} is ${issue.message}`
                 }));
-                res.status(400).json({error: "Invalid Data", details: ""});
+                res.status(400).json({error: "Invalid Data", details: errorMessages});
             } else {
                 res.status(500).json({error: "Internal Server Error"});
             }
