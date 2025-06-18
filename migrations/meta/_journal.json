@@ -8,6 +8,13 @@
       "when": 1748994573757,
       "tag": "0000_regular_puck",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1750218006694,
+      "tag": "0001_lively_arclight",
+      "breakpoints": true
     }
   ]
 }

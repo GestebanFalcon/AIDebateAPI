@@ -25,11 +25,14 @@ export const handleLogin = async (req: Request, res: Response) => {
     const { jwt, error } = generateJwt({ data: {iat: iat.getTime(), exp: exp.getTime(), sub: user.id, email: user.email, role: "user", aud: "goon.com"}});
 
     if (error) {
+        console.log(error);
         res.status(500).json({ error: "Internal Server Error" });
         return;
     }
     
+    console.log("giving cookie");
     res
+    // .setHeader("Access-Control-Allow-Credentials", "true")
     .cookie("access_token", jwt, { httpOnly: true, secure: process.env.NODE_ENV === "production" })
     .status(200)
     .json({ success: "awesome"});

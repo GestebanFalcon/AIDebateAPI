@@ -12,7 +12,7 @@ import { sockets } from "./socket/socket";
 const PORT = 3000;
 const app = express();
 
-app.use(cors());
+app.use(cors({ credentials: true, origin: "http://localhost:5173" }));
 app.use(bodyParser.json({limit: "1mb"}));
 app.use(bodyParser.urlencoded({limit: "1mb", extended: true}));
 app.use(parseCookies);

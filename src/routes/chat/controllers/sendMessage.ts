@@ -25,7 +25,7 @@ export const handleSendMessage = async (req: ExtendedRequest, res: Response) => 
         for (const member of members) {
             sockets.emitToUser(member.userId, 'receiveMessage', { message });
         }
-        res.status(201).json({ message });
+        res.status(201).json({ message, success: "Message Created!" });
         return;
     } catch (err) {
         res.status(500).json({ error: "Internal Server Error" });
