@@ -29,11 +29,12 @@ export const handleCreateConversation = async (req: ExtendedRequest, res: Respon
             if (!newMember) throw new Error ("New Members Bugging");
             members.push(newMember);
         }
+        res.status(201).json({ members, conversation });
+        return;
     } catch (err) {
         res.status(500).json({ error: "Internal Server Error" });
         return;
     }
 
-    res.status(201).json({ members });
-    return;
+    
 }

@@ -10,6 +10,6 @@ import { handleGetConversations } from "./controllers/getConversations";
 export const router = Router();
 
 router.post("/conversations/create", authRequired, validateData(conversationRequestSchema), handleCreateConversation);
-router.get("/conversations/get", authRequired, handleGetConversation);
-router.get("/conversations/getAll", authRequired, handleGetConversations);
+router.get("/conversations/get/:conversationId", authRequired, handleGetConversation);
+router.get("/conversations/get", authRequired, handleGetConversations);
 router.post("/messages/send", authRequired, validateData(sendMessageSchema), handleSendMessage);
